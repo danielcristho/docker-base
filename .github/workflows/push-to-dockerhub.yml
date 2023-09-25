@@ -63,6 +63,6 @@ jobs:
           context: ${{ github.workspace }}/ubuntu-focal
           platforms: linux/amd64,linux/arm/v7,linux/arm/v8,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.Docker_meta.outputs.tags }}
+          tags: danielcristh0/ubuntu-focal:latest
           labels: ${{ steps.Docker_meta.outputs.labels }}
           # target: ubuntu-bionic
