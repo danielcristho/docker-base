@@ -12,7 +12,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y net-tools tcpdump telnet traceroute curl iperf3 knot-host openssh-clien openssh-server mtr-tiny socat nmap iputils-ping rsyslog vim iptables iproute2 nano  \
     && rm -rf /var/lib/apt/lists/*
 
-VOLUME [/root]
+# VOLUME [/root]
 
 # Build for amd64 arch
 FROM base as arm64
@@ -22,7 +22,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y net-tools tcpdump telnet traceroute curl iperf3 knot-host openssh-clien openssh-server mtr-tiny socat nmap iputils-ping rsyslog vim iptables iproute2 nano  \
     && rm -rf /var/lib/apt/lists/*
 
-VOLUME [/root]
+# VOLUME [/root]
 
 # Combine the platforms
 COPY --from=amd64 / /
