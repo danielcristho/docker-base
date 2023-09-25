@@ -7,6 +7,9 @@ VOLUME /root
 # Build for amd64 arch
 # FROM base as amd64
 
+ENV TZ=UTC
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get update \
     && apt-get install -y net-tools build-essential tcpdump telnet traceroute curl iperf3 knot-host openssh-client openssh-server mtr-tiny socat nmap iputils-ping rsyslog vim iptables iproute2 nano  \
