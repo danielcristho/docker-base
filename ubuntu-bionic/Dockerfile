@@ -9,7 +9,7 @@ VOLUME /root
 
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get update \
-    && apt-get install -y net-tools build-essential tcpdump telnet traceroute curl iperf3 knot-host openssh-client openssh-server mtr-tiny socat nmap iputils-ping rsyslog vim iptables iproute2 nano  \
+    && apt-get install -y net-tools build-essential tcpdump telnet traceroute curl iperf3 knot-host openssh-server mtr-tiny socat nmap iputils-ping rsyslog vim iptables iproute2 nano  \
     && rm -rf /var/lib/apt/lists/*
 
 ### Clear cache and change shell ###
