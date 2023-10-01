@@ -1,7 +1,7 @@
 FROM debian:buster as base
 LABEL maintainer="@danielcristho"
 
-VOLUME /root
+VOLUME /
 
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get update \
