@@ -2,7 +2,7 @@ FROM ubuntu:20.04 as base
 
 LABEL maintainer="@danielcristho"
 
-VOLUME /
+VOLUME /root
 
 # Build for amd64 arch
 # FROM base as amd64
