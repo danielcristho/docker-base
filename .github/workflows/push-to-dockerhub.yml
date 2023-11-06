@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: debian-1.1
     steps:
       # Get the repository's code
       - name: Checkout
@@ -47,7 +47,7 @@ jobs:
         with:
           # list of Docker images to use as base name for tags
           images: |
-            danielcristh0/ubuntu-focal
+            danielcristh0/debian-buster
           # Docker tags based on the following events/attributes
           tags: |
             type=schedule
@@ -60,9 +60,9 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: ${{ github.workspace }}/ubuntu-focal
+          context: ${{ github.workspace }}/debian-buster
           platforms: linux/amd64,linux/arm/v7,linux/arm/v8,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: danielcristh0/ubuntu-focal:1.1
+          tags: danielcristh0/debian-buster:1.1
           labels: ${{ steps.Docker_meta.outputs.labels }}
           # target: ubuntu-debian-buster
