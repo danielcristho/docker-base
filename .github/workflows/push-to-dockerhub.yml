@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: debian-1.1
+    runs-on: ubuntu-latest
     steps:
       # Get the repository's code
       - name: Checkout
