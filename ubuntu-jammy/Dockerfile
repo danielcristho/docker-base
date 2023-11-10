@@ -1,6 +1,6 @@
 FROM ubuntu:22.04 as base
 
-LABEL maintainer="@danielcristho"
+LABEL maintainer="<@danielcristho>"
 
 VOLUME /root
 
@@ -19,16 +19,6 @@ RUN apt-get clean && \
     apt-get autoremove -y && \
     rm -rf /var/lib/cache/* && \
     rm -rf /var/lib/log/*
-
-# # Combine the platforms
-# COPY --from=amd64 / /
-# COPY --from=arm64 / /
-
-# COPY supervisord.conf ${supervisor_conf}
-# COPY start.sh /start.sh
-# CMD ["/bin/bash", "/start.sh"]
-
-# CMD ["tail", "-f", "/dev/null"]
 
 CMD ["bash"]
 # CMD ["sh", "-c", "cd; exec bash -i"]
