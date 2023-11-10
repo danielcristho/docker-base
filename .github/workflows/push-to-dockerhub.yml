@@ -1,14 +1,18 @@
 name: Push to DockerHub
 on:
-    workflow_dispatch:
-    push:
-      branches:
-        - main
-      tags:
-        - 'v*.*.*'
-    pull_request:
-      branches:
-        - main
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Docker image tag'
+        required: false
+  push:
+    tags:
+      - 'v*.*.*'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '**/*'
 
 # permissions are needed if pushing to ghcr.io
 permissions:
